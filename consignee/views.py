@@ -117,7 +117,7 @@ def simpan_reservasi_db(request):
 
 
 
-def container_export(request):
+def container_export(request): #Dimas (17-06-2025)
     containers = SurveyInContainer.objects.all()
 
     # Ambil parameter dari form GET (filter)
@@ -163,8 +163,9 @@ def container_export(request):
     return render(request, 'consignee/export.html', {'containers': containers})
 
 
-def detail_export(request,id):
-     # Ambil satu data survey berdasarkan id
+def detail_export(request,id): #Dimas (17-06-2025)
+
+    # Ambil satu data survey berdasarkan id
     surveyincontainer = get_object_or_404(SurveyInContainer, id=id)
 
     # Ambil semua foto dari folder media
@@ -186,5 +187,5 @@ def detail_export(request,id):
     })
 
 
-def keranjang(request):
+def keranjang(request): #Dimas (17-06-2025)
     return render(request, 'consignee/keranjang.html')
